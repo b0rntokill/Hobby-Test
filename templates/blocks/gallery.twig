@@ -1,0 +1,45 @@
+{% set title = 'gallery' %}
+{% set class = 'gallery' %}
+{% set list = [
+  {
+    src: 'gallery-1.jpg',
+    width: 263,
+    height: 343
+  },
+  {
+    src: 'gallery-2.jpg',
+    width: 361,
+    height: 243
+  },
+  {
+    src: 'gallery-3.jpg',
+    width: 457,
+    height: 343
+  },
+  {
+    src: 'gallery-4.jpg',
+    width: 263,
+    height: 281
+  },
+  {
+    src: 'gallery-5.jpg',
+    width: 361,
+    height: 381
+  },
+  {
+    src: 'gallery-6.jpg',
+    width: 455,
+    height: 281
+  },
+] %}
+
+<section class="gallery container">
+  {% include 'components/title-component.twig' with {class, title} %}
+  <ul class="gallery__list">
+    {% for item in list %}
+      <li class="gallery__item">
+        <img src="assets/img/{{item.src}}" width="{{item.width}}" height="{{item.height}}" alt="{{item.alt|default('Photo from gallery')}}">
+      </li>
+    {% endfor %}
+  </ul>
+</section>

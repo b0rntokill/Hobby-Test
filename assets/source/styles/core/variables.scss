@@ -1,0 +1,41 @@
+/* fonts */
+$font-main: "Open Sans", "Arial", sans-serif;
+$font-second: "Roboto", "Arial", sans-serif;
+$font-third: "Times New Roman", "PT Serif", monospace;
+
+/* display */
+$tablet-width: 767px;
+$desktop-width: 1169px;
+
+:root {
+  /* fonts */
+  --font-main: 'Open Sans', 'Arial', sans-serif;
+  --font-second: 'Roboto', 'Arial', sans-serif;
+  --font-third: 'Times New Roman', 'PT Serif', monospace;
+
+  /* colors */
+  --granite-gray: #2c2e37;
+  --graphite-gray: #414142;
+  --graphite-black: #191919;
+  --light-gray: #f8f9fa;
+  --shale-gray: #383e4a;
+  --telegray: #949494;
+  --light-telegray: #cccccc;
+  --gray: #bcbcbc;
+  --periwinkle-craiola: #f0f3f6;
+  --black-brown: #212121;
+  --gray: #777777;
+  --very-pale-blue: #cbcccd;
+  --bright-blue: #0083b3;
+  --twitter-blue: #36aeea;
+  --twitter-color: #29c5f6;
+  --facebook-color: #6788ce;
+  --vkontakte-color: #54769a;
+  --habrahabr-color: #d8e3e7;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* display */
+  --mobile-width: 320px;
+  --tablet-width: 768px;
+}

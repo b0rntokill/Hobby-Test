@@ -1,0 +1,63 @@
+{% set title = 'how we work' %}
+{% set class = 'advantages' %}
+{% set list = [
+  {
+    title: 'Lorem ipsum dolor sit',
+    text: 'amet, consectetur adipisicing elit,&nbsp;sed do eiusmod tempor incididunt',
+    svg: {
+      href: '#advantages-page',
+      width: 32,
+      height: 40
+    }
+  },
+  {
+    title: 'Lorem ipsum dolor sit',
+    text: 'amet, consectetur adipisicing elit,&nbsp;sed do eiusmod tempor incididunt',
+    svg: {
+      href: '#advantages-user',
+      width: 40,
+      height: 40
+    }
+  },
+  {
+    title: 'Lorem ipsum dolor sit',
+    text: 'amet, consectetur adipisicing elit,&nbsp;sed do eiusmod tempor incididunt',
+    svg: {
+      href: '#advantages-book',
+      width: 38,
+      height: 38
+    }
+  },
+  {
+    title: 'Lorem ipsum dolor sit',
+    text: 'amet, consectetur adipisicing elit,&nbsp;sed do eiusmod tempor incididunt',
+    svg: {
+      href: '#advantages-check',
+      width: 38,
+      height: 38
+    }
+  }
+] %}
+
+<section class="advantages container">
+  {% include 'components/title-component.twig' with {class, title} %}
+  <ul class="advantages__list">
+    {% for item in list %}
+      <li class="advantages__item">
+        <span>
+          <b>{{loop.index}}</b>
+        </span>
+        <div>
+          <svg width="124" height="135">
+            <use xlink:href=#icon-background></use>
+          </svg>
+          <svg class="advantages__item-pic" width="{{item.svg.width}}" height="{{item.svg.height}}">
+            <use xlink:href={{item.svg.href}}></use>
+          </svg>
+        </div>
+        <h3>{{item.title}}</h3>
+        <p>{{item.text}}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

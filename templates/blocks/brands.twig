@@ -1,0 +1,68 @@
+{% set title = 'brands' %}
+{% set class = 'gallery' %}
+{% set list = [
+  {
+  svg: {
+      href: '#icon-slack',
+      width: 80,
+      height: 24
+    }
+  },
+  {
+  svg: {
+      href: '#icon-adobe',
+      width: 36,
+      height: 32
+    }
+  },
+  {
+  svg: {
+      href: '#icon-google',
+      width: 80,
+      height: 28
+    }
+  },
+  {
+  svg: {
+      href: '#icon-facebook',
+      width: 80,
+      height: 16
+    }
+  },
+  {
+  svg: {
+      href: '#icon-spotify',
+      width: 80,
+      height: 24
+    }
+  },
+  {
+  svg: {
+      href: '#icon-nike',
+      width: 70,
+      height: 25
+    }
+  }
+] %}
+
+<section class="brands">
+  <div class="brands__wrapper container">
+    <h2 class="visually-hidden">{{title}}</h2>
+    <div class="brands__slider swiper-container">
+      <ul class="brands__slider-wrapper swiper-wrapper">
+        {% for item in list %}
+          <li class="brands__slider-item swiper-slide">
+            <svg class="brands__slider-item-gray" width="{{item.svg.width}}" height="{{item.svg.height}}">
+              <use xlink:href={{item.svg.href}}></use>
+            </svg>
+            <svg class="brands__slider-item-color" width="{{item.svg.width}}" height="{{item.svg.height}}">
+              <use xlink:href={{item.svg.href}}-color></use>
+            </svg>
+          </li>
+        {% endfor %}
+      </ul>
+      <span class="brands__slider-button-next"></span>
+      <span class="brands__slider-button-prev"></span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (max-width: $desktop-width) {
+  .container {
+    width: var(--tablet-width);
+    padding: 0 0.5208%;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .container {
+    width: 100%;
+    padding: 0 3.125%;
+
+    @media (min-width: 500px) {
+      width: 469px;
+    }
+  }
+}

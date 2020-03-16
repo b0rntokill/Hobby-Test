@@ -1,0 +1,10 @@
+{% set title = 'footer' %}
+{% set class = 'footer' %}
+
+<footer class="footer">
+  <div class="footer__list container">
+    <p class="footer__copyrite">All rights reserved 2015</p>
+    {% include 'social-list.twig' with {class} %}
+    <a class="footer__phone" href="tel:+1234243123">1 234 243 123</a>
+  </div>
+</footer>

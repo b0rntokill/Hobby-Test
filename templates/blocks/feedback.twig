@@ -1,0 +1,49 @@
+{% set title = 'our clients say' %}
+{% set class = 'feedback' %}
+{% set list = [
+  {
+    avatar: {
+      src: 'user-1.png',
+      width: 65,
+      height: 65
+    },
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse',
+    name: 'Pavliv',
+    surname: 'Yaroslav',
+    profession: 'Web designer'
+  },
+  {
+    avatar: {
+      src: 'user-2.png',
+      width: 65,
+      height: 65
+    },
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse',
+    name: 'John',
+    surname: 'Scott',
+    profession: 'The Fringe'
+  }
+] %}
+
+<section class="feedback">
+  <div class="feedback__wrapper container">
+    {% include 'components/title-component.twig' with {class, title} %}
+    <ul class="feedback__reviews">
+      {% for item in list %}
+        <li class="feedback__review">
+          <svg width="22" height="24">
+            <use xlink:href=#quotes></use>
+          </svg>
+          <p>{{item.text}}</p>
+          <div>
+            <img src="assets/img/{{item.avatar.src}}" width="{{item.avatar.width}}" height="{{item.avatar.height}}" alt="{{item.alt|default('User avatar')}}">
+            <b>{{item.name}}</b>
+            <b>{{item.surname}}</b>
+            <span>{{item.profession}}</span>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    {% include 'components/modal-component.twig' with {class} %}
+  </div>
+</section>

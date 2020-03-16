@@ -1,0 +1,71 @@
+{% set title = 'our journal' %}
+{% set class = 'journal' %}
+{% set list = [
+  {
+    image: {
+      src: 'journal-nature-1.jpg',
+      width: 380,
+      height: 380
+    },
+    slogan: 'love',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,&nbsp;sed do',
+    text: 'You know how to make best coffee in the universe? Or, maybe you’re very good in designing gloves? Tell everyone about your&nbsp;experience and skills.',
+    svg: {
+      href: '#journal-love',
+      width: 81,
+      height: 81
+    }
+  },
+  {
+    image: {
+      src: 'journal-nature-2.jpg',
+      width: 380,
+      height: 380
+    },
+    slogan: 'tree',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,',
+    text: 'The way to a successful brand is hard, but always very interesting. Share the full story of your project – from the very first day until now.',
+    svg: {
+      href: '#journal-leaf',
+      width: 65,
+      height: 65
+    }
+  },
+  {
+    image: {
+      src: 'journal-nature-3.jpg',
+      width: 380,
+      height: 380
+    },
+    slogan: 'water',
+    title: 'little pieces of our proudness',
+    text: 'What do you do better than your competitors? What are you proud of? What details and advantages of your product you want people to know about?',
+    svg: {
+      href: '#journal-blob',
+      width: 59,
+      height: 74
+    }
+  }
+] %}
+
+<section class="journal container">
+  {% include 'components/title-component.twig' with {class, title} %}
+  <ul class="journal__cards">
+    {% for item in list  %}
+      <li class="journal__card">
+        <div class="journal__image-wrap">
+          <img src="assets/img/{{item.image.src}}" width="{{item.image.width}}" height="{{item.image.height}}" alt="{{item.alt|default('Nature image')}}">
+          <svg width="{{item.svg.width}}" height="{{item.svg.height}}">
+            <use xlink:href={{item.svg.href}}></use>
+          </svg>
+        </div>
+        <div class="journal__description">
+          <b>{{item.slogan}}</b>
+          <h3>{{item.title}}</h3>
+          <p>{{item.text}}</p>
+          <span>0{{loop.index}}</span>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

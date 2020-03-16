@@ -1,0 +1,142 @@
+.travel {
+  padding-top: 19px;
+  padding-bottom: 477px;
+  background-image: url(../img/travel-worldmap.png),
+                    url(../img/travel-background.jpg);
+  background-position: 43% 39px,
+                         50% 100%;
+  background-repeat: no-repeat;
+}
+
+.travel__wrapper {
+  padding: 0 13px;
+}
+
+.travel__title {
+  margin-bottom: 88px;
+}
+
+.travel__slider {
+  width: 100%;
+}
+
+.travel__slider-wrapper {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.travel__slider-item {
+  display: flex;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+
+.travel__slider-button-next {
+  display: none;
+}
+
+.travel__slider-button-prev {
+  display: none;
+}
+
+@media (max-width: $desktop-width) {
+  .travel {
+    padding-top: 19px;
+    padding-bottom: 477px;
+    background-image: url(../img/travel-worldmap.png),
+                      url(../img/travel-background.jpg);
+    background-position: 50% 120px,
+                           50% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .travel__wrapper {
+    position: relative;
+  }
+
+  .travel__slider {
+    width: 90%;
+  }
+
+  .travel__slider-button-next {
+    position: absolute;
+    display: flex;
+    top: 63%;
+    right: 2%;
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid var(--graphite-gray);
+    border-bottom: 2px solid var(--graphite-gray);
+    transform: rotate(-45deg);
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  .travel__slider-button-prev {
+    position: absolute;
+    display: flex;
+    top: 63%;
+    left: 2%;
+    width: 24px;
+    height: 24px;
+    border-left: 2px solid var(--graphite-gray);
+    border-bottom: 2px solid var(--graphite-gray);
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .travel {
+    padding-top: 20px;
+    padding-bottom: 200px;
+  }
+
+  .travel__slider {
+    width: 200px;
+
+    @media (min-width: 500px) {
+      width: 100%;
+    }
+  }
+
+  .travel__slider-button-next {
+    right: 5%;
+
+    @media (min-width: 500px) {
+      right: 0%;
+    }
+  }
+
+  .travel__slider-button-prev {
+    left: 5%;
+
+    @media (min-width: 500px) {
+      left: 0%;
+    }
+  }
+}

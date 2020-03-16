@@ -1,0 +1,18 @@
+<a class="card" href="{{href|default('#')}}">
+  <div class="card__image-overlay">
+    <img src="assets/img/{{image.src}}" width="{{image.width}}" height="{{image.height}}" alt="{{alt|default('Nature image')}}">
+  </div>
+  <div class="card__item-rating">
+    {% for i in range(1, rating) %}
+      <svg width="15" height="15">
+        <use xlink:href=#rating-star></use>
+      </svg>
+    {% endfor %}
+  </div>
+  <h3>{{title}}</h3>
+  <p>{{text}}</p>
+  <div class="card__item-price">
+    <span>{{lastPrice}}{{currency}}</span>
+    <b>{{currency}}{{price}}</b>
+  </div>
+</a>

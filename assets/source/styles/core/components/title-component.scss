@@ -1,0 +1,32 @@
+.title-component {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 20px;
+  padding: 0 140px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 43px;
+  color: var(--granite-gray);
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.title-component svg {
+  margin-bottom: 25px;
+  fill: var(--graphite-black);
+  opacity: 0.2;
+}
+
+@media (max-width: $tablet-width) {
+  .title-component {
+    padding: 0 3.125%;
+    font-size: 26px;
+    line-height: 38px;
+    letter-spacing: 0;
+  }
+}

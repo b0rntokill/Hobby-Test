@@ -1,0 +1,45 @@
+{% set list = [
+  {
+    type: 'text',
+    id: 'user-name',
+    placeholder: 'Name',
+    name: 'name',
+    pattern: '([A-Za-z ]{3,30}$)|([А-Яа-я ]{3,30}$)',
+    required: true
+  },
+  {
+    type: 'tel',
+    id: 'user-phone',
+    placeholder: 'Phone',
+    name: 'phone',
+    pattern: '^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$',
+    required: true
+  },
+  {
+    type: 'email',
+    id: 'user-email',
+    placeholder: 'Email',
+    name: 'email',
+    pattern: '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$',
+    required: true
+  }
+] %}
+
+<div class="{{class}}__form modal">
+  <h2>Contacts</h2>
+  <p>Sign up for our newsletter to receive updates</p>
+  <form action="{{action|default('#')}}" method="{{method|default('get')}}">
+    {% for item in list %}
+      {% include 'input-component.twig' with {
+        type: item.type,
+        id: item.id,
+        placeholder:
+        item.placeholder,
+        name: item.name,
+        pattern: item.pattern,
+        required: item.required
+      } %}
+    {% endfor %}
+    <button type="submit">Send</button>
+  </form>
+</div>

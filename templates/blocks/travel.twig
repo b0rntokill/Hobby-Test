@@ -1,0 +1,95 @@
+{% set title = 'travel with us' %}
+{% set class = 'travel' %}
+{% set list = [
+  {
+    title: 'Carpathian',
+    text: 'Lorem ipsum dolor si amet, consectetur',
+    image: {
+      src: 'travel-carpathian.jpg',
+      width: 200,
+      height: 382
+    },
+    lastPrice: 3150,
+    currency: '$',
+    price: 793,
+    rating: 4
+  },
+  {
+    title: 'Alps',
+    text: 'Lorem ipsum dolor si amet, consectetur',
+    image: {
+      src: 'travel-alps.jpg',
+      width: 200,
+      height: 382
+    },
+    lastPrice: 3150,
+    currency: '$',
+    price: 1893,
+    rating: 5
+  },
+  {
+    title: 'Pyrenees',
+    text: 'Lorem ipsum dolor si amet, consectetur',
+    image: {
+      src: 'travel-pyrenees.jpg',
+      width: 200,
+      height: 382
+    },
+    lastPrice: 3150,
+    currency: '$',
+    price: 2593,
+    rating: 5
+  },
+  {
+    title: 'Rocky',
+    text: 'Lorem ipsum dolor si amet, consectetur',
+    image: {
+      src: 'travel-rocky.jpg',
+      width: 200,
+      height: 382
+    },
+    lastPrice: 3150,
+    currency: '$',
+    price: 2123,
+    rating: 5
+  },
+  {
+    title: 'Kavkaz',
+    text: 'Lorem ipsum dolor si amet, consectetur',
+    image: {
+      src: 'travel-kavkaz.jpg',
+      width: 200,
+      height: 382
+    },
+    lastPrice: 3150,
+    currency: '$',
+    price: 593,
+    rating: 3,
+  }
+] %}
+
+<section class="travel">
+  <div class="travel__wrapper container">
+  {% include 'components/title-component.twig' with {class, title} %}
+    <div class="travel__slider swiper-container">
+      <ul class="travel__slider-wrapper swiper-wrapper">
+        {% for item in list %}
+          <li class="travel__slider-item
+           swiper-slide">
+            {% include 'card.twig' with {
+              title: item.title,
+              text: item.text,
+              image: item.image,
+              lastPrice: item.lastPrice,
+              currency: item.currency,
+              price: item.price,
+              rating: item.rating,
+            } %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <span class="travel__slider-button-next"></span>
+    <span class="travel__slider-button-prev"></span>
+  </div>
+</section>

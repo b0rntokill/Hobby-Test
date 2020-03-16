@@ -1,0 +1,39 @@
+$roboto-fw: (
+  Light: 300,
+  Regular: 400,
+  Black: 800
+);
+
+$open-sans-fw: (
+  Regular: 400,
+  Bold: 700,
+  ExtraBold: 800
+);
+
+@each $name, $val in $roboto-fw {
+  @font-face {
+    font-family: "Roboto";
+    src: local("Roboto-#{$name}"), local("Roboto-#{$name}"), url("../fonts/Roboto-#{$name}.woff2") format("wof2f"), url("../fonts/Roboto-#{$name}.woff") format("woff");
+    font-style: normal;
+    font-weight: #{$val};
+    font-display: swap;
+  }
+ }
+
+ @each $name, $val in $open-sans-fw {
+  @font-face {
+    font-family: "Open Sans";
+    src: local("OpenSans-#{$name}"), local("OpenSans-#{$name}"), url("../fonts/OpenSans-#{$name}.woff2") format("wof2f"), url("../fonts/OpenSans-#{$name}.woff") format("woff");
+    font-style: normal;
+    font-weight: #{$val};
+    font-display: swap;
+  }
+ }
+
+ @font-face {
+  font-family: "Times New Roman";
+  src: local("TimesNewRoman-Italic"), local("TimesNewRoman-Italic"), url("../fonts/TimesNewRoman-Italic.woff2") format("wof2f"), url("../fonts/TimesNewRoman-Italic.woff") format("woff");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}

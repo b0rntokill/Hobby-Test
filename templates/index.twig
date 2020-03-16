@@ -1,0 +1,24 @@
+{% extends 'core/layout.twig' %}
+{% set title = 'HobbyWorldTest' %}
+{% set content = 'HobbyWorldTest' %}
+
+{% block styles %}
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+{% endblock %}
+
+{% block body %}
+  <h1 class="visually-hidden">Landing Page</h1>
+  {% include 'blocks/journal.twig' %}
+  {% include 'blocks/advantages.twig' %}
+  {% include 'blocks/travel.twig' %}
+  {% include 'blocks/gallery.twig' %}
+  {% include 'blocks/brands.twig' %}
+  {% include 'blocks/feedback.twig' %}
+  {% include 'blocks/footer.twig' %}
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script src="assets/js/travel-slider.js"></script>
+  <script src="assets/js/brands-slider.js"></script>
+{% endblock %}

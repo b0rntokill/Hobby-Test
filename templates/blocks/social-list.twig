@@ -1,0 +1,39 @@
+{% set list = [
+  {
+    social: 'twitter',
+    svg: {
+      href: '#icon-twitter',
+      width: 25,
+      height: 20
+    }
+  },
+  {
+    social: 'facebook',
+    svg: {
+      href: '#icon-fb',
+      width: 16,
+      height: 24
+    }
+  },
+  {
+    social: 'vkontakte',
+    svg: {
+      href: '#icon-vkontakte',
+      width: 17,
+      height: 11
+    }
+  }
+] %}
+
+<ul class="social-list {{class}}__social-list">
+  {% for item in list %}
+    <li class="social-list__item">
+      <a class="social-list__link social-list__link--{{item.social}}" href="{{item.href|default('#')}}">
+        <svg width="{{item.svg.width}}" height="{{item.svg.height}}">
+          <use xlink:href={{item.svg.href}}></use>
+        </svg>
+        <span class="visually-hidden">social network logo {{item.social}}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

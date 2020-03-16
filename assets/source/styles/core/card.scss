@@ -1,0 +1,110 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover .card__image-overlay,
+  &:focus .card__image-overlay {
+    background: none;
+  }
+
+  &:hover img,
+  &:focus img {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.card__image-overlay {
+  display: flex;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAH0lEQVQYV2NkwAEYkcSlGBgYnkH5UkRJoBhKlA4UOwAFCgRv2cn0pAAAAABJRU5ErkJggg==);
+}
+
+.card img {
+  border-radius: 5px;
+  object-fit: cover;
+  opacity: 0.68;
+  transition: all 0.7s ease-out;
+}
+
+.card__item-rating {
+  position: absolute;
+  top: 12px;
+  left: 21px;
+}
+
+.card__item-rating svg {
+  fill: var(--white);
+}
+
+.card h3 {
+  position: absolute;
+  top: 111px;
+  left: 19px;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 63px;
+  color: var(--white);
+  text-align: left;
+}
+
+.card p {
+  position: absolute;
+  bottom: 122px;
+  left: 19px;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--white);
+  text-align: left;
+}
+
+.card__item-price {
+  position: absolute;
+  display: flex;
+  flex-flow: row;
+  bottom: 0px;
+  left: 0;
+  // Блин, вынужденная корректировка из-за применения слайдера. отнимается сумма паддингов в заданной оси координат.
+  width: calc(100% - 31px);
+  height: calc(62px - 41px);
+  padding: 21px 13px 20px 18px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card__item-price span {
+  width: 40%;
+  margin-right: 10%;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--white);
+  text-decoration: line-through;
+  text-align: left;
+}
+
+.card__item-price b {
+  display: block;
+  width: 50%;
+  margin-top: -4px;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 26px;
+  color: var(--white);
+  text-align: right;
+}
